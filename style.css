@@ -23,6 +23,9 @@
 	--primary-radius: 14px;
 	--radius-circle: 50%;
 }
+a {
+	text-decoration: none;
+}
 img {
 	display: block;
 	object-fit: cover;
@@ -34,4 +37,138 @@ html {
 }
 p {
 	font-size: var(--font-primary);
+}
+body {
+	display: flex;
+	place-items: center;
+	justify-content: center;
+	min-height: 720px;
+	height: 100vh;
+	width: 100%;
+	background-color: var(--dark-blue-1);
+}
+
+.icon svg {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.card {
+	height: 597px;
+	padding: 24px;
+	width: 351px;
+	background-color: var(--dark-blue-2);
+	border-radius: var(--primary-radius);
+}
+.card {
+	box-shadow: -20px 40px 2px rgb(14, 27, 45), 20px 40px 2px rgb(14, 27, 45);
+}
+.img-container {
+	height: 355px;
+	display: grid;
+	grid-template-rows: max-content 1fr;
+	align-items: end;
+}
+.img-active {
+	position: relative;
+	border-radius: var(--primary-radius);
+	transition: all ease-in;
+}
+
+.img-active::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 255, 247, 0);
+	border-radius: var(--primary-radius);
+	transition: background-color 0.3s ease-in;
+}
+
+.img-active:hover::after {
+	background-color: rgba(0, 255, 247, 0.516);
+}
+
+.active-link:hover > * {
+	color: var(--color-primary-2);
+}
+
+.card__img {
+	border-radius: var(--primary-radius);
+	height: 303px;
+	width: 100%;
+}
+
+.card__img-name {
+	font-size: var(--font-primary);
+	color: var(--white);
+	transition: color 0.3s ease-in;
+	font-weight: 550;
+}
+/* <div class="card__meta">
+<p class="card__description">
+  Our Equilibrium collection promotes balance and calm
+</p>
+
+  <p class="balance-info">
+    <span></span>
+    0.041ETH
+  </p>
+  <p class="day-info">3 days left</p>
+
+</div> */
+.card__meta {
+	height: 137px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-content: space-evenly;
+	border-block-end: 1px var(--dark-blue-3) solid;
+}
+.card__description {
+	grid-column: 1 / 3;
+	color: var(--color-primary-1);
+}
+.balance-info {
+	justify-self: self-start;
+	color: var(--color-primary-2);
+}
+.day-info {
+	justify-self: end;
+	color: var(--color-primary-1);
+}
+/*
+			<figure class="card__creator">
+				<div class="img-shape">
+					<img class="card__creato-img" src="" alt="" />
+				</div>
+				<figcaption class="card__creator-name"></figcaption>
+			</figure>
+      
+      */
+.card__creator {
+	height: 58px;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+.img-shape {
+	height: 30px;
+	width: 30px;
+	border-radius: var(--radius-circle);
+	border: 1px solid var(--white);
+}
+.card__creator-name {
+	color: var(--white);
+	font-size: 1.6rem;
+}
+.card__creator-name a {
+	transition: color 0.3s ease-in;
+
+	color: var(--color-primary-1);
+}
+.active-link span {
+	transition: color 0.3s ease-in;
 }
